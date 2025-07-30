@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Designer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+  <nav class="fixed w-full bg-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-purple-600">Your Name</h1>
+      <ul class="flex space-x-6 text-gray-700 font-medium">
+        <li><a href="#about" class="hover:text-purple-600">About</a></li>
+        <li><a href="#portfolio" class="hover:text-purple-600">Portfolio</a></li>
+        <li><a href="#services" class="hover:text-purple-600">Services</a></li>
+        <li><a href="#contact" class="hover:text-purple-600">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+    <h1 class="text-5xl font-bold mb-4 fade-in">Hi, I’m <span class="text-yellow-300">Your Name</span></h1>
+    <p class="text-xl mb-6 fade-in">Freelance Graphic Designer | Branding | UI/UX</p>
+    <a href="#portfolio" class="bg-yellow-300 text-gray-900 px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-400 transition fade-in">View My Work</a>
+  </section>
+
+  <section id="about" class="py-20 px-6 text-center fade-in">
+    <h2 class="text-4xl font-bold mb-6">About Me</h2>
+    <p class="max-w-2xl mx-auto text-lg text-gray-600">
+      I’m a passionate graphic designer who loves creating bold, creative, and timeless designs. With experience in branding, social media, and UI/UX, I help businesses bring their ideas to life visually.
+    </p>
+  </section>
+
+  <section id="portfolio" class="py-20 px-6 bg-gray-100 fade-in">
+    <h2 class="text-4xl font-bold text-center mb-10">My Work</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x300" alt="Project 1" class="w-full">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Project Title 1</h3>
+          <p class="text-gray-600 text-sm">Short description of this project.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x300" alt="Project 2" class="w-full">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Project Title 2</h3>
+          <p class="text-gray-600 text-sm">Short description of this project.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x300" alt="Project 3" class="w-full">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold">Project Title 3</h3>
+          <p class="text-gray-600 text-sm">Short description of this project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-20 px-6 fade-in">
+    <h2 class="text-4xl font-bold text-center mb-10">Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-semibold mb-2">Logo Design</h3>
+        <p class="text-gray-600">Unique, memorable logos that define your brand.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-semibold mb-2">Branding</h3>
+        <p class="text-gray-600">Complete brand identity creation for businesses.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-2xl font-semibold mb-2">Social Media Graphics</h3>
+        <p class="text-gray-600">Eye-catching visuals for Instagram, Facebook, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-20 px-6 bg-gray-100 text-center fade-in">
+    <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
+    <p class="text-lg mb-6 text-gray-700">Let’s work together! Reach out to me via email.</p>
+    <a href="mailto:your.email@example.com" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition">Email Me</a>
+    <div class="flex justify-center gap-6 mt-6">
+      <a href="#" class="text-gray-600 hover:text-purple-600">Instagram</a>
+      <a href="#" class="text-gray-600 hover:text-purple-600">Behance</a>
+      <a href="#" class="text-gray-600 hover:text-purple-600">Dribbble</a>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-gray-500 text-sm">
+    © 2025 Your Name. All Rights Reserved.
+  </footer>
+
+  <script>
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+    elements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
